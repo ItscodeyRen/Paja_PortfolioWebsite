@@ -18,6 +18,7 @@
         <a href="#about" class="nav-link" data-section="about">About</a>
         <a href="#programming" class="nav-link" data-section="programming">Programming</a>
         <a href="#multimedia" class="nav-link" data-section="multimedia">Multimedia</a>
+        <a href="#leadership" class="nav-link" data-section="leadership">Leadership & Organizations</a>
         <a href="#contact" class="nav-link" data-section="contact">Contact</a>
     </nav>
     <div class="mobile-menu-toggle">
@@ -357,13 +358,13 @@
     
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function() {
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.classList.toggle('active');
         });
         
-        // Close menu when link is clicked
+        // Close menu when link is clicked (only on mobile)
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
-                navMenu.style.display = 'none';
+                navMenu.classList.remove('active');
             });
         });
     }
